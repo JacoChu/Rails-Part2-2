@@ -54,14 +54,16 @@
 
     <div class="form-group">
       <%= ff.label :description %>
-      <%= ff.text_area :description, :class => "form-control" %>
+      <%= f.cktext_area :description, ckeditor: { language: 'zh-CN'} %>
     </div>
   </fieldset>
-  <%= ff.remove_nested_fields_link "移除這個票種", :class => "btn btn-danger" %>
+      <div class="form-group">
+        <%= ff.remove_nested_fields_link "移除這個票種", :class => "btn btn-danger" %>
+      </div>
 <% end %>
-<p class="text-right">
-  <%= f.add_nested_fields_link :tickets, "新增票種", :class => "btn btn-default" %>
-</p>
+      <div class="form-group">
+        <%= f.add_nested_fields_link :tickets, "新增票種", :class => "btn btn-default" %>
+      </div>  
 
 
 <script>
