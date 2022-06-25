@@ -43,7 +43,7 @@ class Admin::EventsController < AdminController
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :friendly_id, :status)
+    params.require(:event).permit(:name, :description, :friendly_id, :status, :category_id)
   end
 
   def find_params

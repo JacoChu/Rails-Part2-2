@@ -21,5 +21,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:time_zone)
   end
 
-
 end
