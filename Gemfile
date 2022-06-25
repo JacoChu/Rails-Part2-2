@@ -5,6 +5,7 @@ ruby '2.7.5'
 gem 'rails-i18n', '~> 7.0', '>= 7.0.3'
 gem 'devise-i18n', '~> 1.10', '>= 1.10.2'
 gem 'select2-rails', '~> 4.0', '>= 4.0.13'
+gem 'nested_form_fields', '~> 0.8.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.5', '>= 6.1.5.1'
 # Use sqlite3 as the database for Active Record
