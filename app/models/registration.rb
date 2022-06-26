@@ -1,6 +1,7 @@
 class Registration < ApplicationRecord
   attr_accessor :current_step
-
+  has_paper_trail
+  
   #valid
   STATUS = ["pending", "confirmed"]
   validates_inclusion_of :status, :in => STATUS
@@ -13,6 +14,7 @@ class Registration < ApplicationRecord
   belongs_to :event
   belongs_to :ticket
   belongs_to :user, :optional => true
+  
 
   
 

@@ -12,6 +12,12 @@ gem 'ranked-model', '~> 0.4.8'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
 gem 'ransack', '~> 3.2', '>= 3.2.1'
+gem 'paper_trail', '~> 12.3'
+gem 'rubyzip'
+gem 'axlsx'
+gem 'axlsx_rails'
+gem 'carrierwave'
+gem "mini_magick"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.5', '>= 6.1.5.1'
 # Use sqlite3 as the database for Active Record

@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_26_071508) do
+ActiveRecord::Schema.define(version: 2022_06_26_131031) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "event_attachments", force: :cascade do |t|
+    t.integer "event_id"
+    t.string "attachment"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_event_attachments_on_event_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -28,6 +37,8 @@ ActiveRecord::Schema.define(version: 2022_06_26_071508) do
     t.string "status", default: "draft"
     t.integer "category_id"
     t.integer "row_order"
+    t.string "logo"
+    t.string "images"
     t.index ["category_id"], name: "index_events_on_category_id"
     t.index ["friendly_id"], name: "index_events_on_friendly_id", unique: true
     t.index ["row_order"], name: "index_events_on_row_order"
@@ -102,6 +113,17 @@ ActiveRecord::Schema.define(version: 2022_06_26_071508) do
     t.string "time_zone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.bigint "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.text "object", limit: 1073741823
+    t.datetime "created_at"
+    t.text "object_changes", limit: 1073741823
+    t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
 
 end
