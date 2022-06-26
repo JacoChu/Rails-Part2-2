@@ -62,7 +62,9 @@ class RegistrationsController < ApplicationController
     @registration.current_step = 3
 
     if @registration.update(registration_params)
-      redirect_to event_registration_path(@event, @registration), notice: "報名成功"
+      flash[:notice] = "報名成功"
+      NotificationMailer.confirmed_registration(@registration).deliver_later
+      redirect_to event_registration_path(@event, @registration)
     else
       render :step3
     end
