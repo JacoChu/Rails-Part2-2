@@ -9,3 +9,7 @@
       private: 私密
   admin:
     event_list: 活動列表管理
+  registration:
+    status:
+      pending: 報名尚未完成
+      confirmed: 報名成功

@@ -3,11 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
+
+  has_many :registrations
   has_many :memberships
   has_many :groups, :through => :memberships
   has_one :profile
+  
   accepts_nested_attributes_for :profile
+
   def display_name
     self.email.split("@").first
   end
