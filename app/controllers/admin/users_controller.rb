@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
   before_action :find_user, only: %i[edit update]
-
+  before_action :require_admin!
   def index
     @users = User.includes(:groups).all
   end
@@ -20,10 +20,13 @@ class Admin::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :group_ids => [])
+    params.require(:user).permit(:email, :role, :group_ids => [])
   end
   
   def find_user
     @user = User.find(params[:id])
   end
+
+
+
 end

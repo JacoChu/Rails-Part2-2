@@ -15,6 +15,6 @@
   <li><%= link_to a.description, a.attachment.url %></li>
 <% end %>
 </ul>
-<%= sanitize @event.description %>
+<%= simple_format @event.description %>
 
 <p><%= link_to "開始報名", new_event_registration_path(@event), :class => "btn btn-primary" %></p>
