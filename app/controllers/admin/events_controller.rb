@@ -1,8 +1,8 @@
 class Admin::EventsController < AdminController
-  before_action :find_params, only: [:show , :update, :edit, :destroy]
+  before_action :find_params, only: [:show , :update, :edit, :destroy, :reorder]
 
   def index
-    @events = Event.all
+    @events = Event.rank(:row_order).all
   end
 
   def show
@@ -60,6 +60,16 @@ class Admin::EventsController < AdminController
 
     flash[:alert] = "成功完成 #{total} 筆"
     redirect_to admin_events_path
+  end
+
+  def reorder
+    @event.row_order_position = params[:position]
+    @event.save!
+  
+    respond_to do |format|
+      format.html { redirect_to admin_events_path }
+      format.json { render :json => { :message => "ok" }}
+    end
   end
 
   private

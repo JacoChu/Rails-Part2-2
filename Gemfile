@@ -8,6 +8,8 @@ gem 'select2-rails', '~> 4.0', '>= 4.0.13'
 gem 'nested_form_fields', '~> 0.8.4'
 gem 'bootstrap-datepicker-rails', '~> 1.9', '>= 1.9.0.1'
 gem 'ckeditor', '4.2.4'
+gem 'ranked-model', '~> 0.4.8'
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.5', '>= 6.1.5.1'
 # Use sqlite3 as the database for Active Record
