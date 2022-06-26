@@ -1,5 +1,7 @@
 "zh-CN":
   event_list: 活動列表
+  bulk_update: 批次編輯
+  bulk_delete: 批次刪除
   event:
     status:
       draft: 草稿
